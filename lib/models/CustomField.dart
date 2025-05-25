@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomField extends StatelessWidget {
   TextEditingController controller;
+  FormFieldValidator<String>? validator;
   String label;
   String placeholder;
   String? value;
@@ -26,13 +27,15 @@ class CustomField extends StatelessWidget {
     required this.keyboardType,
     required this.isPassword,
     this.isPhoneField = false,
+    this.validator,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextField(
+        TextFormField(
+          validator: validator,
           controller: controller,
           decoration: InputDecoration(
             filled: true,

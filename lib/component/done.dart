@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 
 class Done extends StatelessWidget {
-  const Done({super.key});
+  final GlobalKey<FormState> formKey;
+  Done({super.key, required this.formKey});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 40,
-      decoration: BoxDecoration(
-        color: Color(0xFF004CFF),
-        borderRadius: BorderRadius.circular(17),
+    return GestureDetector(
+      onTap: () {
+        if(formKey.currentState!.validate()){
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Done")));
+        }
+      },
+      child: Container(
+        width: double.infinity,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Color(0xFF004CFF),
+          borderRadius: BorderRadius.circular(17),
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text("Done",style: TextStyle(color: Colors.white,backgroundColor: Color(0xFF004CFF)),)),
       ),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text("Done",style: TextStyle(color: Colors.white),)),
     );
   }
 }
