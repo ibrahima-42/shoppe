@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Done extends StatelessWidget {
   final GlobalKey<FormState> formKey;
-  Done({super.key, required this.formKey});
+  const Done({super.key, required this.formKey});
 
   @override
   Widget build(BuildContext context) {

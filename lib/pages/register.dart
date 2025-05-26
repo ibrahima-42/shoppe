@@ -46,76 +46,81 @@ class _RegisterState extends State<Register> {
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 50),
-                  Text(
-                    "Created\naccount",
-                    style: TextStyle(
-                      fontFamily: "Raleway",
-                      fontSize: 34,
-                      fontWeight: FontWeight.bold,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 50),
+                    Text(
+                      "Created\naccount",
+                      style: TextStyle(
+                        fontFamily: "Raleway",
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 40),
-                  Upload(),
-                  SizedBox(height: 20),
-                  CustomField(
-                    controller: emailController,
-                    label: "email",
-                    placeholder: "Email", 
-                    keyboardType: TextInputType.emailAddress, 
-                    isPassword: false,
-                    icon: Icons.email,
-                    validator: (value) {
-                      if (value!.isEmpty){
-                        return "Email est requis";
-                      }
-                      if (!value.contains("@")||!value.contains(".")){
-                        return "email invalid";
-                      }
-                      return null;
-                    },
-                    ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 40),
+                    Upload(),
+                    SizedBox(height: 20),
                     CustomField(
-                      controller: passwordController,
-                      label: "password",
-                      placeholder: "Password", 
-                      keyboardType: TextInputType.visiblePassword, 
-                      isPassword: true,
-                      obscureText: isPassword,
-                      icon: Icons.lock_open,
-                      suffixIcon: isPassword ? Icons.visibility_off : Icons.visibility,
-                      suffixIconPressed: _togglePassword,
+                      controller: emailController,
+                      label: "email",
+                      placeholder: "Email", 
+                      keyboardType: TextInputType.emailAddress, 
+                      isPassword: false,
+                      icon: Icons.email,
                       validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Password est requis";
+                        if (value!.isEmpty){
+                          return "Email est requis";
                         }
-                        if (value.length < 6) {
-                          return "Password doit contenir au moins 6 caracteres";
-                        }
-                        if (!RegExp(r'[A-Z]').hasMatch(value)){
-                          return " Password doit etre composer de le majuscule";
+                        if (!value.contains("@")||!value.contains(".")){
+                          return "email invalid";
                         }
                         return null;
                       },
-                    ),
-                    SizedBox(height: 20),
-                    CustomField(
-                      controller: numberController,
-                      label: "number",
-                      placeholder: "Phone number",
-                      keyboardType: TextInputType.phone,
-                      isPassword: false,
-                      isPhoneField: true,
-                    ),
-                    SizedBox(height: 20),
-                    Done(formKey: _formKey),
-                    SizedBox(height: 20),
-                    Cancel(),
-                ],
+                      ),
+                      SizedBox(height: 10),
+                      CustomField(
+                        controller: passwordController,
+                        label: "password",
+                        placeholder: "Password", 
+                        keyboardType: TextInputType.visiblePassword, 
+                        isPassword: true,
+                        obscureText: isPassword,
+                        icon: Icons.lock_open,
+                        suffixIcon: isPassword ? Icons.visibility_off : Icons.visibility,
+                        suffixIconPressed: _togglePassword,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Password est requis";
+                          }
+                          if (value.length < 6) {
+                            return "Password doit contenir au moins 6 caracteres";
+                          }
+                          if (!RegExp(r'[A-Z]').hasMatch(value)){
+                            return " Password doit etre composer de le majuscule";
+                          }
+                          if (!RegExp(r'[@#]').hasMatch(value)){
+                            return "Password doit contenir @ et #";
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      CustomField(
+                        controller: numberController,
+                        label: "number",
+                        placeholder: "Phone number",
+                        keyboardType: TextInputType.phone,
+                        isPassword: false,
+                        isPhoneField: true,
+                      ),
+                      SizedBox(height: 20),
+                      Done(formKey: _formKey),
+                      SizedBox(height: 20),
+                      Cancel(),
+                  ],
+                ),
               ),
             ),
           ),
