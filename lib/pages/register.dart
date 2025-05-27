@@ -114,6 +114,12 @@ class _RegisterState extends State<Register> {
                         keyboardType: TextInputType.phone,
                         isPassword: false,
                         isPhoneField: true,
+                        validator: (value) {
+                          if (value!.isEmpty){
+                            return "Phone number est requis";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(height: 20),
                       Done(formKey: _formKey),

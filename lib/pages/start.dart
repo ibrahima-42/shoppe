@@ -15,7 +15,7 @@ class Start extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 50,
+              height: 140,
             ),
             Align(
               alignment: Alignment.topCenter,
