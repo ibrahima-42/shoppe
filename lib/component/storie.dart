@@ -23,7 +23,7 @@ class Storie extends StatelessWidget {
           return Row(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
                 child: Container(
                   height: 230,
                   width: 100,
