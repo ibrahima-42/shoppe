@@ -42,7 +42,7 @@ class Order extends StatelessWidget {
             ),
             Positioned(
               top: 0,
-              left: 83,
+              left: 80,
               child: Container(
                 height: 12,
                 width: 12,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppe/component/live.dart';
 
 class Storie extends StatelessWidget {
   Storie({Key? key}) : super(key: key);
@@ -24,16 +25,31 @@ class Storie extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Container(
-                  height: 230,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(storie[index]),
-                      fit: BoxFit.cover,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 230,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(storie[index]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: IconButton(
+                        iconSize: 20,
+                        icon: Icon(Icons.play_arrow),
+                        color: Colors.white,
+                        onPressed: (){},
+                      ), 
                     ),
-                  ),
-                  child: Icon(Icons.play_arrow, color: Colors.white, size: 20),
+                    if(index == 0)
+                        Positioned(
+                          top: 2,
+                          left: 8,
+                          child: Live(),
+                        ),
+                  ],
                 ),
               ),
               SizedBox(width: 5),
