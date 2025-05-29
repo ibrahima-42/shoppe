@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppe/pages/home.dart';
 
 class Done extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -10,6 +11,7 @@ class Done extends StatelessWidget {
       onTap: () {
         if(formKey.currentState!.validate()){
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Done")));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
         }
       },
       child: Container(

@@ -7,7 +7,7 @@ class Announce extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 19, vertical: 14),
       decoration: BoxDecoration(
         color: Color(0xFFF8F8F8),
         borderRadius: BorderRadius.circular(17),

@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: SafeArea(
           child: Row(
@@ -33,71 +34,83 @@ class Home extends StatelessWidget {
                   ],
                   border: Border.all(
                     width: 3,
-                    color: const Color.fromARGB(255, 255, 255, 255)),
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
-                  child: Image.asset("assets/images/avatar.png",
-                  // width: 30,
-                  height: 30,
-                  )
+                  child: Image.asset(
+                    "assets/images/avatar.png",
+                    // width: 30,
+                    height: 30,
+                  ),
                 ),
               ),
-              SizedBox(width: 10,),
+              SizedBox(width: 10),
               MyActivity(),
             ],
           ),
         ),
         actions: [
           Scan(),
-          SizedBox(width: 5,),
+          SizedBox(width: 5),
           Menu(),
-          SizedBox(width: 5,),
+          SizedBox(width: 5),
           Setting(),
-          SizedBox(width: 10,),
+          SizedBox(width: 10),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Text("Hello, Khalil!",
-             style: TextStyle(
-              fontFamily: "Raleway",
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-             ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Hello, Khalil!",
+                style: TextStyle(
+                  fontFamily: "Raleway",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 12),
+              Announce(),
+              SizedBox(height: 18),
+              Text(
+                "Recently viewed",
+                style: TextStyle(
+                  fontFamily: "Raleway",
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 12),
+              Recent(),
+              SizedBox(height: 12),
+              Text(
+                "My Orders",
+                style: TextStyle(
+                  fontFamily: "Raleway",
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 12),
+              Order(),
+              SizedBox(height: 10),
+              Text(
+                "Stories",
+                style: TextStyle(
+                  fontFamily: "Raleway",
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 12),
+              Storie(),
+            ],
           ),
-          SizedBox(height: 12,), 
-          Announce(),
-          SizedBox(height: 18,),
-          Text("Recently viewed",style: TextStyle(
-            fontFamily: "Raleway",
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),) 
-          ,
-          SizedBox(height: 12,),
-          Recent(),
-          SizedBox(height: 12,),
-          Text("My Orders",style: TextStyle(
-            fontFamily: "Raleway",
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),),
-          SizedBox(height: 12,),
-          Order(),
-          SizedBox(height: 10,),
-          Text("Stories",
-          style: TextStyle(
-            fontFamily: "Raleway",
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),),
-          SizedBox(height: 12,),
-          Storie(),
-          ],
         ),
       ),
     );
