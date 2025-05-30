@@ -24,11 +24,11 @@ class Storie extends StatelessWidget {
           return Row(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
                 child: Stack(
                   children: [
                     Container(
-                      height: 230,
+                      height: 120,
                       width: 100,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -46,7 +46,7 @@ class Storie extends StatelessWidget {
                     if(index == 0)
                         Positioned(
                           top: 2,
-                          left: 8,
+                          left: 10,
                           child: Live(),
                         ),
                   ],

@@ -8,7 +8,7 @@ class Order extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(17),
             color: Color(0xFFE5EBFC),
@@ -26,7 +26,7 @@ class Order extends StatelessWidget {
         Stack(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(17),
                 color: Color(0xFFE5EBFC),
@@ -42,7 +42,7 @@ class Order extends StatelessWidget {
             ),
             Positioned(
               top: 0,
-              left: 80,
+              left: 93,
               child: Container(
                 height: 12,
                 width: 12,
@@ -57,7 +57,7 @@ class Order extends StatelessWidget {
         ),
         Spacer(),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(17),
             color: Color(0xFFE5EBFC),

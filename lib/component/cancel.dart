@@ -11,6 +11,7 @@ class Cancel extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Text("Cancel",style: TextStyle(color: const Color.fromARGB(255, 71, 69, 69)),)));
+          child: Text("Cancel",
+          style: TextStyle(color: const Color.fromARGB(255, 71, 69, 69)),)));
   }
 }
