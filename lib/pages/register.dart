@@ -3,6 +3,7 @@ import 'package:shoppe/component/cancel.dart';
 import 'package:shoppe/component/done.dart';
 import 'package:shoppe/component/upload.dart';
 import 'package:shoppe/models/CustomField.dart';
+import 'package:shoppe/responsive/responsive.dart';
 
 class Register extends StatefulWidget {
 
@@ -28,6 +29,7 @@ class _RegisterState extends State<Register> {
     
     @override
     Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -39,6 +41,7 @@ class _RegisterState extends State<Register> {
             image: DecorationImage(
               image: AssetImage("assets/images/Bubbles1.png"),
               alignment: Alignment.topCenter,
+              fit: BoxFit.contain,
               repeat: ImageRepeat.noRepeat,
             ),
           ),
@@ -50,18 +53,18 @@ class _RegisterState extends State<Register> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 50),
+                    SizedBox(height: ResponsiveHelper.screenHeight(context) * 0.2,),
                     Text(
                       "Created\naccount",
                       style: TextStyle(
                         fontFamily: "Raleway",
-                        fontSize: 34,
+                        fontSize: 52,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: ResponsiveHelper.screenHeight(context) * 0.04),
                     Upload(),
-                    SizedBox(height: 20),
+                    SizedBox(height: ResponsiveHelper.screenHeight(context) * 0.04),
                     CustomField(
                       controller: emailController,
                       label: "email",

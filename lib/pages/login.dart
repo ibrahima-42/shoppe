@@ -10,6 +10,9 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double screenHeight =  MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -32,7 +35,7 @@ class Login extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 270,),
+                  SizedBox(height: screenHeight * 0.3,),
                   Text(
                     "Login",
                     style: TextStyle(
