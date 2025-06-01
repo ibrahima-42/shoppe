@@ -17,7 +17,7 @@ class ButtonStart extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 40,
+        height: 61,
         decoration: BoxDecoration(
           color: Color(0xFF004CFF),
           borderRadius: BorderRadius.circular(17),
@@ -28,7 +28,7 @@ class ButtonStart extends StatelessWidget {
             "Let's get started",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 22,
             ),
           ),
         ),

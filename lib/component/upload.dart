@@ -6,7 +6,7 @@ class Upload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.asset("assets/images/upload.png",width: 60,height: 60,),
+      child: Image.asset("assets/images/upload.png",width: 100,height: 100,),
     );
   }
 }

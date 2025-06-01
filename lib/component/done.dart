@@ -16,14 +16,20 @@ class Done extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 40,
+        height: 61,
         decoration: BoxDecoration(
           color: Color(0xFF004CFF),
           borderRadius: BorderRadius.circular(17),
         ),
         child: Align(
           alignment: Alignment.center,
-          child: Text("Done",style: TextStyle(color: Colors.white,backgroundColor: Color(0xFF004CFF)),)),
+          child: Text("Done",style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 0.5,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            fontFamily: "Raleway",
+            ),),),
       ),
     );
   }

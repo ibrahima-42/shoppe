@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoppe/component/already.dart';
 import 'package:shoppe/component/buttonstart.dart';
+import 'package:shoppe/responsive/responsive.dart';
 
 class Start extends StatelessWidget {
   const Start({super.key});
@@ -10,26 +11,26 @@ class Start extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 140,
+              height: ResponsiveHelper.screenHeight(context) * 0.2,
             ),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
                 "assets/images/logo.png",
-                width: 100,
-                height: 100,
+                width: 134,
+                height: 134,
               ),
             ),
             Text(
               "Shoppe",
               style: TextStyle(
                 fontFamily: "Raleway",
-                fontSize: 34,
+                fontSize: 52,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -45,7 +46,7 @@ class Start extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: "Raleway",
-                  fontSize: 16,
+                  fontSize: 19,
                 ),
               ),
             ),
@@ -55,6 +56,9 @@ class Start extends StatelessWidget {
             ButtonStart(),
             SizedBox(
               height: 30,
+            ),
+            SizedBox(
+              height: ResponsiveHelper.screenHeight(context) * 0.04,
             ),
             Already(),
           ],
